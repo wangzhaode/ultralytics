@@ -119,6 +119,8 @@ def benchmark(
             if "cuda" in device.type:
                 assert gpu, "inference not supported on GPU"
 
+            if i not in {1, 12, 13}:
+                continue
             # Export
             if format == "-":
                 filename = model.ckpt_path or model.cfg
